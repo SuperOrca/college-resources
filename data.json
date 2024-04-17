@@ -108,5 +108,32 @@
         "tags": [
             "Free"
         ]
+    },
+    {
+        "name": "MIT OpenCourseWare",
+        "icon": "https://avatars.githubusercontent.com/u/3009146?s=280&v=4",
+        "url": "https://ocw.mit.edu/",
+        "description": "MIT OpenCourseWare is a web based publication of virtually all MIT course content. OCW is open and available to the world and is a permanent MIT activity.",
+        "tags": [
+            "Free"
+        ]
+    },
+    {
+        "name": "Stanford Online",
+        "icon": "https://pbs.twimg.com/profile_images/378800000012653503/d5584d23d53e2c8531681183c3dc622c_400x400.png",
+        "url": "https://online.stanford.edu/",
+        "description": "Stanford Online offers learning opportunities via free online courses, online degrees, grad and professional certificates, e-learning, and open courses.",
+        "tags": [
+            "Free"
+        ]
+    },
+    {
+        "name": "Khan Academy",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjVB-aqxYVNoraaNHF9iDXsk6fOsA8ZBsRtv36LOIvg&s",
+        "url": "https://www.khanacademy.org/",
+        "description": "Learn for free about math, art, computer programming, economics, physics, chemistry, biology, medicine, finance, history, and more.",
+        "tags": [
+            "Free"
+        ]
     }
 ]
