@@ -6,6 +6,7 @@ var showFilters = false
 const searchFilter = document.getElementById("search")
 const discountFilter = document.getElementById("discount")
 const freeFilter = document.getElementById("free")
+const trialFilter = document.getElementById("trial")
 const verifiedFilter = document.getElementById("verified")
 
 function toggleFilters() {
@@ -83,6 +84,7 @@ function update() {
 
     if (discountFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Discount"))
     if (freeFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Free"))
+    if (trialFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Trial"))
     if (verifiedFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Verified"))
 
     searchFilter.placeholder = `Search (${filteredData.length}) college resources...`
