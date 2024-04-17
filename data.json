@@ -9,7 +9,7 @@
         ]
     },
     {
-        "name": "Apple Music",
+        "name": "Apple Music + Apple TV+",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png",
         "url": "https://support.apple.com/en-us/106008",
         "description": "Listen to millions of songs, watch music videos, and experience live performances all on Apple Music. Play on web, in app, or on Android with your subscription.",
@@ -71,6 +71,42 @@
         "tags": [
             "Discount",
             "Trial"
+        ]
+    },
+    {
+        "name": "Open Textbook Library",
+        "icon": "https://library.usu.edu/oer/images/logos/opentextbook.jpg",
+        "url": "https://open.umn.edu/opentextbooks",
+        "description": "Open textbooks are licensed by authors and publishers to be freely used and adapted. Download, edit and distribute them at no cost.",
+        "tags": [
+            "Free"
+        ]
+    },
+    {
+        "name": "OpenStax",
+        "icon": "https://avatars.githubusercontent.com/u/3805549?s=200&v=4",
+        "url": "https://openstax.org/",
+        "description": "Free and flexible textbooks and resources.",
+        "tags": [
+            "Free"
+        ]
+    },
+    {
+        "name": "Bookboon",
+        "icon": "https://www.coorpacademy.com/wp-content/uploads/2020/12/bookboon-logo-circle.png",
+        "url": "https://bookboon.com/en/textbooks",
+        "description": "Get free access to hundreds of free textbooks written by professors from the world’s top universities, all on one easy-to-access online ebook platform.",
+        "tags": [
+            "Free"
+        ]
+    },
+    {
+        "name": "Desmos",
+        "icon": "https://preview.redd.it/i-made-the-desmos-logo-in-desmos-v0-35h5zldg0l0a1.png?width=679&format=png&auto=webp&s=6cadc355dc457e026ad018c0d3f494e962c6efe0",
+        "url": "https://www.desmos.com/calculator",
+        "description": "Graphing Calculator",
+        "tags": [
+            "Free"
         ]
     }
 ]
