@@ -156,6 +156,7 @@ hr {
     width: 13rem;
     margin-left: 1rem;
     border-radius: 2rem;
+    object-fit: contain;
 }
 
 .result-content {

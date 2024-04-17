@@ -1,7 +1,7 @@
 [
     {
-        "name": "Spotify + Hulu",
-        "icon": "https://developer.spotify.com/images/guidelines/design/icon4@2x.png/",
+        "name": "Spotify & Hulu",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/256px-Spotify_App_Logo.svg.png",
         "url": "https://www.spotify.com/us/student/",
         "description": "Listen to millions of songs, offline and without ad interruptions or watch full seasons of exclusively streaming series, current-season episodes, hit movies, and Hulu Originals.",
         "tags": [
@@ -9,8 +9,8 @@
         ]
     },
     {
-        "name": "Apple Music + Apple TV+",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png",
+        "name": "Apple Music & Apple TV+",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/256px-Apple_Music_icon.svg.png",
         "url": "https://support.apple.com/en-us/106008",
         "description": "Listen to millions of songs, watch music videos, and experience live performances all on Apple Music. Play on web, in app, or on Android with your subscription.",
         "tags": [
@@ -19,7 +19,7 @@
     },
     {
         "name": "JetBrains",
-        "icon": "https://www.jetbrains.com/company/brand/img/logo1.svg",
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/JetBrains_beam_logo.svg/256px-JetBrains_beam_logo.svg.png",
         "url": "https://www.jetbrains.com/community/education/#students/",
         "description": "JetBrains is a cutting-edge software vendor specializing in the creation of intelligent development tools, including IntelliJ IDEA - the leading Java IDE, and the Kotlin programming language.",
         "tags": [
@@ -28,7 +28,7 @@
     },
     {
         "name": "Microsoft Office 365",
-        "icon": "https://store-images.s-microsoft.com/image/apps.31863.9007199267161390.f6c0dcf0-421c-431c-b3a7-74acbba4ee22.9e1136d1-6b50-4a06-a181-ad8e3152a63a",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_365_%282022%29.svg/256px-Microsoft_365_%282022%29.svg.png",
         "url": "https://www.microsoft.com/en-us/education/products/office/",
         "description": "Collaborate for free with online versions of Microsoft Word, PowerPoint, Excel, and OneNote. Save documents, workbooks, and presentations online, in OneDrive. Share them with others and work together at the same time.",
         "tags": [
@@ -37,7 +37,7 @@
     },
     {
         "name": "GitHub Student Developer Pack",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/256px-GitHub_Invertocat_Logo.svg.png",
         "url": "https://education.github.com/pack",
         "description": "Learn to ship software like a pro using curated bundles of pack partner products, GitHub tools, and other resources that are designed for you learn new skills.",
         "tags": [
@@ -46,7 +46,7 @@
     },
     {
         "name": "Adobe Creative Cloud",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/256px-Adobe_Creative_Cloud_rainbow_icon.svg.png",
         "url": "https://www.adobe.com/creativecloud/buy/students.html",
         "description": "Get access to Photoshop, Illustrator, InDesign, Premiere Pro and more.",
         "tags": [
@@ -56,7 +56,7 @@
     },
     {
         "name": "Notion",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/256px-Notion-logo.svg.png",
         "url": "https://www.notion.so/product/notion-for-education",
         "description": "A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team.",
         "tags": [
@@ -65,7 +65,7 @@
     },
     {
         "name": "Amazon Prime",
-        "icon": "https://m.media-amazon.com/images/G/01/DiscoTec/2024/1H/NYNY/Browse/LP/Dossier/Visual_Nav/Prime_DES/Prime_Widget_DES_TryPrime._CB570967311_UC290,290_.jpg",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Amazon_Prime_logo_%282022%29.svg/256px-Amazon_Prime_logo_%282022%29.svg.png",
         "url": "https://www.amazon.com/Amazon-Student/b?ie=UTF8&node=668781011",
         "description": "Free delivery, exclusive deals, tons of movies and music.",
         "tags": [

@@ -1,56 +1,51 @@
-var data
-const results = document.getElementById("results")
-const filtersMenu = document.getElementById("filters-menu")
-var showFilters = false
-
-const searchFilter = document.getElementById("search")
-const discountFilter = document.getElementById("discount")
-const freeFilter = document.getElementById("free")
-const trialFilter = document.getElementById("trial")
-const verifiedFilter = document.getElementById("verified")
-
-function toggleFilters() {
-    showFilters = !showFilters
-    if (showFilters) filtersMenu.style.display = "flex"
-    else filtersMenu.style.display = "none"
+async function fetchData() {
+    const response = await fetch('./data.json');
+    return response.json();
 }
 
-function createResult(name, icon, url, description, tags) {
-    const divResult = document.createElement('div');
-    divResult.classList.add('result');
+function toggleFilters() {
+    const filtersMenu = document.getElementById("filters-menu");
+    filtersMenu.style.display = (filtersMenu.style.display === "flex") ? "none" : "flex";
+}
 
-    const imgIcon = document.createElement('img');
-    imgIcon.classList.add('result-icon');
+function createResult({ name, icon, url, description, tags }) {
+    const divResult = document.createElement('div');
+    divResult.className = 'result';
+
+    const imgIcon = new Image();
+    imgIcon.className = 'result-icon';
     imgIcon.src = icon;
+    imgIcon.alt = `Icon of ${name}`;
 
     const divContent = document.createElement('div');
-    divContent.classList.add('result-content');
+    divContent.className = 'result-content';
 
     const divTitle = document.createElement('div');
-    divTitle.classList.add('result-title');
+    divTitle.className = 'result-title';
 
     const h1Title = document.createElement('h1');
     h1Title.textContent = name;
 
     const aLink = document.createElement('a');
-    aLink.target = '_blank';
     aLink.href = url;
+    aLink.target = '_blank';
 
     const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    svgIcon.setAttribute('width', '32');
-    svgIcon.setAttribute('height', '32');
     svgIcon.setAttribute('viewBox', '0 0 24 24');
-
-    const pathIcon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    pathIcon.setAttribute('fill', 'currentColor');
-    pathIcon.setAttribute('d', 'M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z');
+    svgIcon.innerHTML = '<path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"></path>';
 
     const pDescription = document.createElement('p');
     pDescription.textContent = description;
 
     const ulTags = document.createElement('ul');
-    ulTags.classList.add('result-tags');
+    ulTags.className = 'result-tags';
+
+    tags.forEach(tag => {
+        const liTag = document.createElement("li");
+        liTag.className = 'result-tag ' + tag.toLowerCase();
+        liTag.textContent = tag;
+        ulTags.appendChild(liTag);
+    });
 
     divResult.appendChild(imgIcon);
     divResult.appendChild(divContent);
@@ -58,55 +53,38 @@ function createResult(name, icon, url, description, tags) {
     divTitle.appendChild(h1Title);
     divTitle.appendChild(aLink);
     aLink.appendChild(svgIcon);
-    svgIcon.appendChild(pathIcon);
     divContent.appendChild(pDescription);
     divContent.appendChild(ulTags);
-
-    tags.forEach(tag => {
-        const liTag = document.createElement("li");
-        liTag.classList.add('result-tag', tag.toLowerCase());
-        liTag.textContent = tag;
-        ulTags.appendChild(liTag)
-    });
 
     return divResult;
 }
 
-function update() {
-    results.innerHTML = ""
+async function update() {
+    const data = await fetchData();
+    const results = document.getElementById("results");
+    results.innerHTML = '';
 
-    let filteredData = data
+    const searchFilter = document.getElementById("search").value.toLowerCase();
+    const filters = {
+        discount: document.getElementById("discount").checked,
+        free: document.getElementById("free").checked,
+        trial: document.getElementById("trial").checked,
+        verified: document.getElementById("verified").checked
+    };
 
-    if (searchFilter.value) {
-        let search = searchFilter.value.toLowerCase()
-        filteredData = filteredData.filter(result => result.name.toLowerCase().includes(search) || result.description.toLowerCase().includes(search))
-    }
+    const filteredData = data.filter(result => {
+        const searchCriteria = searchFilter.length === 0 || result.name.toLowerCase().includes(searchFilter) || result.description.toLowerCase().includes(searchFilter);
+        const discountCriteria = !filters.discount || result.tags.includes("Discount");
+        const freeCriteria = !filters.free || result.tags.includes("Free");
+        const trialCriteria = !filters.trial || result.tags.includes("Trial");
+        const verifiedCriteria = !filters.verified || result.tags.includes("Verified");
 
-    if (discountFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Discount"))
-    if (freeFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Free"))
-    if (trialFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Trial"))
-    if (verifiedFilter.checked) filteredData = filteredData.filter(result => result.tags.includes("Verified"))
+        return searchCriteria && discountCriteria && freeCriteria && trialCriteria && verifiedCriteria;
+    });
 
-    searchFilter.placeholder = `Search (${filteredData.length}) college resources...`
+    document.getElementById("search").placeholder = `Search (${filteredData.length}) college resources...`;
 
-    console.log(filteredData)
-
-    filteredData.forEach(result => {
-        results.appendChild(createResult(
-            result.name,
-            result.icon,
-            result.url,
-            result.description,
-            result.tags
-        ))
-    })
+    filteredData.forEach(result => results.appendChild(createResult(result)));
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('./data.json')
-        .then(response => response.json())
-        .then(jsonData => {
-            data = jsonData;
-            update();
-        })
-});
+document.addEventListener('DOMContentLoaded', update);
