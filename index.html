@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find free or discounted software and online resources for college students.">
+    <meta name="keywords" content="college resources, free software, discounted software, online resources">
+    <meta name="author" content="SuperOrca">
+
+    <title>College Resources</title>
+    <link rel="icon" type="image/png" href="/icon.png">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="query">
+            <div class="search-menu">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Search college resources..." maxlength="40"
+                        oninput="update()" id="search">
+                    <button class="filter-button" onclick="toggleFilters()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M11 20q-.425 0-.712-.288T10 19v-6L4.2 5.6q-.375-.5-.112-1.05T5 4h14q.65 0 .913.55T19.8 5.6L14 13v6q0 .425-.288.713T13 20z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="filters-menu" class="filters-menu" style="display: none;">
+                <ul class="filters">
+                    <li>
+                        <input type="checkbox" id="discount" onclick="update()">
+                        <span>Discount</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="free" onclick="update()">
+                        <span>Free</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="verified" onclick="update()">
+                        <span>Verified</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="results" id="results"></div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
